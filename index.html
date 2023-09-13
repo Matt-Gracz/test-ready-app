@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>URL Redirection App</title>
+    <title>ReADY Request Utility</title>
 </head>
 <body>
-    <input type="text" id="inputNumber" placeholder="Enter number">
+    <input type="text" id="inputNumber" placeholder="Enter ReADY Request number">
     <button onclick="redirectToURL()">Go</button>
 
     <script type="text/javascript">
         function redirectToURL() {
             const number = document.getElementById("inputNumber").value;
-            const newURL = `https://some-website.com/request/${number}`;
+            const newURL = `https://wiscready.assetworks.cloud/ready/api/aim/request/screen/process/${number}`;
             window.open(newURL, '_blank');
         }
     </script>
