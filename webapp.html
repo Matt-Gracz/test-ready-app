@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Redirection App</title>
+</head>
+<body>
+    <input type="text" id="inputNumber" placeholder="Enter number">
+    <button onclick="redirectToURL()">Go</button>
+
+    <script type="text/javascript">
+        function redirectToURL() {
+            const number = document.getElementById("inputNumber").value;
+            const newURL = `https://some-website.com/request/${number}`;
+            window.open(newURL, '_blank');
+        }
+    </script>
+</body>
+</html>
