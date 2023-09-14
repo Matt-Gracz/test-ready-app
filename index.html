@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ReADY Request Utilities</title>
+    <title>ReADY Utility</title>
+    <style>
+        /* Make the input and buttons as wide as their placeholder/content */
+        input, button {
+            width: auto;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
 </head>
 <body>
-    <input type="text" id="inputNumber" placeholder="Input the ReADY Request number and hit enter.<br />">
-    <button onclick="redirectToURL()">Go to ReADY Request</button>
+    <!-- Single Input Text Box -->
+    <input type="text" id="request" placeholder="Enter ReADY Request Number" style="width: 250px;">
+
+    <!-- ReADY Button -->
+    <button onclick="redirectToReADY()">Go to ReADY</button>
+
+    <!-- AiM Button -->
+    <button onclick="redirectToAiM()">Go to AiM</button>
 
     <script type="text/javascript">
-        function redirectToURL() {
-            const number = document.getElementById("inputNumber").value;
-            const newURL = `https://wiscready.assetworks.cloud/ready/api/aim/request/screen/process/${number}`;
-            window.open(newURL, '_blank');
+        function redirectToReADY() {
+            const requestNumber = document.getElementById("request").value;
+            const readyURL = `https://some-website.com/request/${requestNumber}`;
+            window.open(readyURL, '_blank');
+        }
+
+        function redirectToAiM() {
+            const requestNumber = document.getElementById("request").value;
+            const aimURL = `https://wisc.assetworks.hosting/fmax/screen/WO_BROWSE?aePProENotes.notes.operator=CONTAINS&aePProE.longDesc.operator=CONTAINS&aePPhsE.longDesc.operator=CONTAINS&aePProE.readyRequest=${requestNumber}&aePProE.description.operator=CONTAINS&aeAmInspectionE.description.operator=CONTAINS&aePPhsE.description.operator=CONTAINS&aePPhsENotes.notes.operator=CONTAINS`;
+            window.open(aimURL, '_blank');
         }
     </script>
 </body>
